@@ -122,7 +122,7 @@ Label(root, text="Created by: SoftDev TM", bg='light blue').place(x=71, y=457)
 Button(root, text="CLEAR", bg='#676767', fg='white', command=lambda:clearButton(root)).place(x=30, y=250, width=100, height=30)
 
 #create compute button
-Button(root, text="&COMPUTE", bg='#676767', fg='white',command=computeButton).place(x=150, y=250, width=100, height=30)
+Button(root, text="COMPUTE", bg='#676767', fg='white',command=computeButton).place(x=150, y=250, width=100, height=30)
 
 #Line Separator
 line_between = tk.PhotoImage(file="C:\images\Group3.png" )
