@@ -1,7 +1,6 @@
- import tkinter as tk
+import tkinter as tk
 import tkinter.font as font
 from tkinter import *
-
 
 #click the CLEAR Button
 def clearButton(root):    
@@ -24,7 +23,6 @@ def invalid_input():
     lbl_MonthlyPaymentVar.config(text='')
     lbl_InterestVar.config(text='')
     
-
 #click the COMPUTE Button
 
 def computeButton():
@@ -47,7 +45,7 @@ def computeButton():
 
     else:
         invalid_input()
-     # assign variable from user input   
+    # assign variable from user input   
     loanVar = float(entLoanVar.get())
     years = float(entYearsPayVar.get())
     interest = float(entInterestVar.get())
@@ -81,7 +79,6 @@ root = tk.Tk()
 root.title("Loan Calculator")
 root.resizable(False,False)
 root.geometry("284x497+500+100")
-
 
 #icon beside the title
 image_icon = tk.PhotoImage(file="C:\images\profit.png")
@@ -135,17 +132,14 @@ entYearsPayVar = Entry(root, bd=2, font="bold", justify=LEFT)
 # monthlyPaymentVar = StringVar()
 lbl_MonthlyPaymentVar = Label(root, font="bold", justify=LEFT)
 
-
 #output for total Payment
 # totalPaymentVar = StringVar()
 Label(root, font="bold",  justify=LEFT).place(x=141, y=362)
 lbl_TotalPaymentVar = Label(root, text='',font="bold", justify=LEFT)
 
-
 #output for total interest
 # totalInterestVar = StringVar()
 lbl_InterestVar =Label(root, font="bold", justify=LEFT)
-
 
 # show entry variables to the screen
 entLoanVar.place(x=140, y=90, width=126, height=30)
