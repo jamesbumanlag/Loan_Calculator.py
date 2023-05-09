@@ -1,4 +1,4 @@
-import tkinter as tk
+ import tkinter as tk
 import tkinter.font as font
 from tkinter import *
 
@@ -29,44 +29,39 @@ def invalid_input():
 
 def computeButton():
     
-    if (entYearsPayVar.get()).isnumeric(): 
+    if (entYearsPayVar.get()): 
 
         if entLoanVar.get():
 
-            #allow user to input float number in loan amount entry
+            #allow user to input float number in loan amount, interest and years entry
             try:
                 float(entLoanVar.get())
-                
                 float(entInterestVar.get())
+                float(entYearsPayVar.get())
                 #allow user to input float number
-                try:
-                    float(entInterestVar.get()) 
-                    # assign variable from user input   
-                    loanVar = int(entLoanVar.get())
-                    years = int(entYearsPayVar.get())
-                    interest = float(entInterestVar.get())
-
-                    # Calculation by calling function
-                    total_interest =computeTotalInterest(loanVar,interest,years)
-                    total_payment = computeTotalPayment(loanVar, total_interest)
-                    monthlyPay=computeMonthlyPayment(total_payment, years)     
-                        
-                    #Display values
-                    lbl_TotalPaymentVar.config(text=f'{total_payment:,.2f}',fg='black')
-                    lbl_MonthlyPaymentVar.config(text=f'{monthlyPay:,.2f}')
-                    lbl_InterestVar.config(text=f'{total_interest:,.2f}')
-
-                except ValueError:
-                    invalid_input()
+                               
             except ValueError:
                 invalid_input()
-            
+           
         else:
             invalid_input()
 
     else:
         invalid_input()
-    
+     # assign variable from user input   
+    loanVar = float(entLoanVar.get())
+    years = float(entYearsPayVar.get())
+    interest = float(entInterestVar.get())
+
+    # Calculation by calling function
+    total_interest =computeTotalInterest(loanVar,interest,years)
+    total_payment = computeTotalPayment(loanVar, total_interest)
+    monthlyPay=computeMonthlyPayment(total_payment, years)     
+        
+    #Display values
+    lbl_TotalPaymentVar.config(text=f'{total_payment:,.2f}',fg='black')
+    lbl_MonthlyPaymentVar.config(text=f'{monthlyPay:,.2f}')
+    lbl_InterestVar.config(text=f'{total_interest:,.2f}')
 #Compute Monthly Payment
 def computeMonthlyPayment(totalPayment,years):
     monthlyPay = totalPayment / (years*12)
