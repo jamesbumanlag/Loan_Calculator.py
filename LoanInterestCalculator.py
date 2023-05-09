@@ -38,8 +38,7 @@ def computeButton():
                 float(entLoanVar.get())
                 float(entInterestVar.get())
                 float(entYearsPayVar.get())
-                #allow user to input float number
-                               
+                                             
             except ValueError:
                 invalid_input()
            
