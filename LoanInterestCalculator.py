@@ -27,7 +27,7 @@ def invalid_input():
 
 def computeButton():
     
-    if (entYearsPayVar.get()): 
+    if entYearsPayVar.get(): 
 
         if entLoanVar.get():
 
